@@ -1,0 +1,9 @@
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif, -apple-system, sans-serif; }
+.skill-card, .project-card, .exp-item, .cert-card {
+  transition: all 0.2s ease;
+}
+.glass-effect {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(2px);
+}
