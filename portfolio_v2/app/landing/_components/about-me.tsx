@@ -147,15 +147,31 @@ export default function AboutMe() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button className="bg-yellow-500 hover:bg-yellow-400 text-black font-mono font-semibold rounded-none px-8">
-                <Download className="mr-2 w-4 h-4" /> ./download-cv
-              </Button>
-              <Button
-                variant="outline"
-                className="rounded-none px-8 border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 font-mono bg-transparent"
+              <a
+                href="/Ariel_Traje_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Ariel_Traje_Resume.pdf"
+                className="w-full sm:w-auto"
               >
-                <Mail className="mr-2 w-4 h-4" /> ./contact
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-none px-8 border-yellow-500/40 text-yellow-500 hover:bg-yellow-500/10 font-mono w-full bg-transparent"
+                >
+                  ./view-cv <Download className="ml-2 w-4 h-4" />
+                </Button>
+              </a>
+              <a
+                href="mailto:arieljulytraje@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Ariel%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A"
+                >
+                <Button
+                    variant="outline"
+                    className="rounded-none px-8 border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 font-mono bg-transparent"
+                >
+                    <Mail className="mr-2 w-4 h-4" /> ./contact
+                </Button>
+                </a>
             </div>
           </motion.div>
         </div>

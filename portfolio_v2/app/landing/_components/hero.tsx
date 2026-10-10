@@ -136,8 +136,6 @@ export default function Hero() {
                   ./view-projects <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </a>
-
-              {/* Download CV — links to /public/Ariel_Traje_Resume.pdf */}
               <a
                 href="/Ariel_Traje_Resume.pdf"
                 target="_blank"
