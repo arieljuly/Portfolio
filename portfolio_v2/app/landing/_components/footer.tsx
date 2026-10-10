@@ -126,7 +126,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500 flex items-center gap-2">
-            <span className="text-yellow-500">©</span> 2025 ariel@dev
+            <span className="text-yellow-500">©</span> 2026 ariel@dev
           </p>
 
           <div className="flex items-center gap-4">

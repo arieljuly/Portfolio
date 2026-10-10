@@ -16,58 +16,66 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     id: "01",
-    title: "Resort Booking System",
+    title: "Resort & Booking Management System",
     description:
-      "Full-stack solution for room availability, reservations, and admin dashboards with real-time booking status and payment workflows.",
-    tech: ["Laravel", "MySQL", "Tailwind", "Stripe"],
+      "A full-stack resort management platform designed to centralize reservations, accommodation inventory, guest services, payment workflows, and daily resort operations.",
+    tech: ["Laravel", "MySQL", "Next.js", "Tailwind CSS"],
     highlights: [
-      "Complex business logic",
-      "Role-based access control",
-      "Automated notifications",
+      "Reservation Lifecycle & Double-Booking Prevention",
+      "Role-Based Access Control & Audit Logs",
+      "Dynamic Pricing, Packages & Payment Management",
+      "Real-Time Accommodation Availability",
+      "Operational Analytics & Revenue Reporting",
     ],
-    github: "#",
-    live: "https://project-1y21.vercel.app/",
+    github: "https://github.com/arieljuly/Project/tree/main/custom/RBMS",
+    live: "https://demo-rbms.arjul.site/home",
   },
   {
     id: "02",
-    title: "Review Center / LMS",
+    title: "Review Center Management System",
     description:
-      "Scalable Learning Management System for student enrollment, exam management, and file storage with retake approval logic.",
-    tech: ["Next.js", "PostgreSQL", "FastAPI", "AWS S3"],
+      "A web-based platform for managing review center operations, student enrollment, learning resources, exam assessments, and retake approval workflows.",
+    tech: ["Laravel", "MySQL", "Bootstrap"],
     highlights: [
-      "Complex data relationships",
-      "File storage optimization",
-      "Scalable architecture",
+      "Student Enrollment & Academic Records",
+      "Exam Management & Assessment Workflows",
+      "Admin-Approved Retake Requests",
+      "Scalable File & Learning Resource Management",
+      "Role-Based Access Control",
     ],
-    github: "#",
+    github: "https://github.com/arieljuly/Project/tree/main/custom/apex",
     live: "https://cepadayonreviewcenter.com/",
   },
   {
     id: "03",
-    title: "CI/CD Pipeline",
+    title: "Scalable Monorepo CI/CD Architecture",
     description:
-      "Automated code formatting, testing, build checks, and deployment. Reduced deployment time by 80% and eliminated manual errors.",
-    tech: ["GitHub Actions", "Docker", "YAML", "AWS EC2"],
+      "Designed dual CI/CD workflows for a multi-service monorepo, combining change-based core service validation with parallel execution of independent custom project pipelines to improve scalability and reduce pipeline waiting time.",
+    tech: ["GitHub Actions", "YAML", "Docker", "Python", "Laravel"],
     highlights: [
-      "DevOps automation",
-      "Git workflow optimization",
-      "Real-time debugging",
+      "Change-Based Core Service Detection",
+      "Parallel Custom Project Pipelines",
+      "Multi-Stack CI/CD Orchestration",
+      "Optimized Pipeline Execution",
+      "Automated Code Validation",
     ],
-    github: "#",
+    github: "https://github.com/arieljuly/Project",
     live: "#",
   },
   {
     id: "04",
-    title: "POS & Inventory System",
+    title: "POS & Inventory Management System",
     description:
-      "Robust Point of Sale system handling product management, stock updates, sales transactions, and detailed reporting.",
+      "Full-stack business management system for processing sales, managing product inventory, tracking stock movements, and generating sales and inventory reports.",
     tech: ["React", "Laravel", "MySQL", "Chart.js"],
     highlights: [
-      "Transaction handling",
-      "Data consistency",
-      "Business intelligence",
+      "Reliable Sales Transaction Processing",
+      "Real-Time Inventory Updates",
+      "Stock Movement & Adjustment Tracking",
+      "Low-Stock Monitoring",
+      "Sales Analytics & Business Reporting",
     ],
-    github: "#",
+    github: "https://github.com/arieljuly/doubleK_Inventory",
     live: "#",
   },
 ];
@@ -100,85 +108,127 @@ export default function FeaturedProjects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="bg-[#111111] border border-yellow-500/10 hover:border-yellow-500/40 transition-all duration-300 rounded-lg overflow-hidden group h-full">
-                <CardHeader className="p-6 pb-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="text-4xl font-bold font-mono text-yellow-500/30 group-hover:text-yellow-500/60 transition-colors">
-                      {project.id}
-                    </span>
-                    <a
-                      href={project.live}
-                      className="text-gray-500 hover:text-yellow-500 transition-colors"
-                      aria-label={`View ${project.title}`}
-                    >
-                      <ArrowUpRight className="w-5 h-5" />
-                    </a>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-white font-mono group-hover:text-yellow-500 transition-colors mb-2">
-                    {project.title}
-                  </h3>
-                </CardHeader>
+          {projects.map((project, index) => {
+            const hasLive = !!project.live && project.live !== "#";
+            const hasGithub = !!project.github && project.github !== "#";
 
-                <CardContent className="p-6 pt-0 space-y-4">
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20 border border-yellow-500/20 rounded font-mono text-xs"
+            return (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="bg-[#111111] border border-yellow-500/10 hover:border-yellow-500/40 transition-all duration-300 rounded-lg overflow-hidden group h-full flex flex-col">
+                  <CardHeader className="p-6 pb-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="text-4xl font-bold font-mono text-yellow-500/30 group-hover:text-yellow-500/60 transition-colors">
+                        {project.id}
+                      </span>
+                      <a
+                        href={hasLive ? project.live : undefined}
+                        target={hasLive ? "_blank" : undefined}
+                        rel={hasLive ? "noopener noreferrer" : undefined}
+                        className={`transition-colors ${
+                          hasLive
+                            ? "text-gray-500 hover:text-yellow-500"
+                            : "text-gray-700 pointer-events-none"
+                        }`}
+                        aria-label={`View ${project.title}`}
                       >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
+                        <ArrowUpRight className="w-5 h-5" />
+                      </a>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white font-mono group-hover:text-yellow-500 transition-colors mb-2">
+                      {project.title}
+                    </h3>
+                  </CardHeader>
 
-                  <div className="pt-2 border-t border-gray-800">
-                    <p className="text-xs font-mono text-gray-500 mb-2">
-                      {"// key_highlights"}
+                  <CardContent className="p-6 pt-0 space-y-4 flex-1">
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {project.description}
                     </p>
-                    <ul className="space-y-1">
-                      {project.highlights.map((h, i) => (
-                        <li
-                          key={i}
-                          className="text-xs text-gray-400 font-mono flex items-center gap-2"
-                        >
-                          <span className="text-yellow-500">▸</span> {h}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
 
-                <CardFooter className="p-6 pt-0 flex gap-3">
-                  <Button
-                    variant="default"
-                    className="flex-1 bg-yellow-500 hover:bg-yellow-400 text-black font-mono rounded-none text-xs"
-                  >
-                    <ExternalLink className="w-3 h-3 mr-2" /> live_demo
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="flex-1 border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 font-mono rounded-none text-xs bg-transparent"
-                  >
-                    <FaGithub className="w-3 h-3 mr-2" /> source
-                  </Button>
-                </CardFooter>
-              </Card>
-            </motion.div>
-          ))}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20 border border-yellow-500/20 rounded font-mono text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="pt-2 border-t border-gray-800">
+                      <p className="text-xs font-mono text-gray-500 mb-2">
+                        {"// key_highlights"}
+                      </p>
+                      <ul className="space-y-1">
+                        {project.highlights.map((h, i) => (
+                          <li
+                            key={i}
+                            className="text-xs text-gray-400 font-mono flex items-center gap-2"
+                          >
+                            <span className="text-yellow-500">▸</span> {h}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </CardContent>
+
+                  <CardFooter className="p-6 pt-0 flex gap-3">
+                    {/* LIVE DEMO BUTTON */}
+                    <Button
+                      asChild={hasLive}
+                      disabled={!hasLive}
+                      variant="default"
+                      className="flex-1 bg-yellow-500 hover:bg-yellow-400 text-black font-mono rounded-none text-xs disabled:bg-yellow-500/20 disabled:text-yellow-500/40 disabled:opacity-100 disabled:cursor-not-allowed"
+                    >
+                      {hasLive ? (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="w-3 h-3 mr-2" /> live_demo
+                        </a>
+                      ) : (
+                        <>
+                          <ExternalLink className="w-3 h-3 mr-2" /> live_demo
+                        </>
+                      )}
+                    </Button>
+
+                    {/* SOURCE (GITHUB) BUTTON */}
+                    <Button
+                      asChild={hasGithub}
+                      disabled={!hasGithub}
+                      variant="outline"
+                      className="flex-1 border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 font-mono rounded-none text-xs bg-transparent disabled:border-yellow-500/10 disabled:text-yellow-500/30 disabled:opacity-100 disabled:cursor-not-allowed"
+                    >
+                      {hasGithub ? (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <FaGithub className="w-3 h-3 mr-2" /> source
+                        </a>
+                      ) : (
+                        <>
+                          <FaGithub className="w-3 h-3 mr-2" /> source
+                        </>
+                      )}
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

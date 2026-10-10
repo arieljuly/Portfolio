@@ -43,19 +43,17 @@ export default function AboutMe() {
                 <p className="text-white text-lg font-bold pt-4">
                   # Ariel July Traje
                 </p>
-                <p className="text-gray-500">## Full-Stack Developer</p>
+                <p className="text-gray-500">Build Smarter. Scale Faster. Deliver with Confidence.</p>
                 <p className="pt-2 leading-relaxed">
-                  BSIT Magna Cum Laude graduate from the University of Mindanao.
-                  Passionate about building scalable systems, clean APIs, and
-                  secure applications.
+                  BSIT Magna Cum Laude graduate from the University of Mindanao, specializing in full-stack development, scalable systems, and secure API-driven applications. I turn complex business needs into reliable, high-performance digital solutions.
                 </p>
                 <p className="pt-4">
                   <span className="text-yellow-500">$</span> cat interests.txt
                 </p>
-                <p className="text-green-400">→ Open Source</p>
-                <p className="text-green-400">→ Cybersecurity</p>
-                <p className="text-green-400">→ Cloud Architecture</p>
-                <p className="text-green-400">→ Automation</p>
+                <p className="text-green-400">→ Full-Stack Developer</p>
+                <p className="text-green-400">→ Front-End Developer</p>
+                <p className="text-green-400">→ AI Automation</p>
+                <p className="text-green-400">→ SaaS Application Developer</p>
               </div>
             </div>
 
@@ -131,7 +129,7 @@ export default function AboutMe() {
                     <CheckCircle2 className="w-4 h-4 text-yellow-500 mt-0.5" />
                   ),
                   title: "Interests",
-                  desc: "Open Source, AI, DevOps",
+                  desc: "AI Automation, SaaS, Web Apps, Front-End Development, SEO",
                 },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
@@ -147,32 +145,32 @@ export default function AboutMe() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="/Ariel_Traje_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Ariel_Traje_Resume.pdf"
-                className="w-full sm:w-auto"
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-none px-8 border-yellow-500/40 text-yellow-500 hover:bg-yellow-500/10 font-mono w-full bg-transparent"
+                <a
+                    href="/Ariel_Traje_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Ariel_Traje_Resume.pdf"
+                    className="w-full sm:w-auto"
                 >
-                  ./view-cv <Download className="ml-2 w-4 h-4" />
-                </Button>
-              </a>
-              <a
-                href="mailto:arieljulytraje@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Ariel%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A"
-                >
-                <Button
+                    <Button
+                    size="lg"
                     variant="outline"
-                    className="rounded-none px-8 border-yellow-500/30 text-yellow-500 hover:bg-yellow-500/10 font-mono bg-transparent"
-                >
-                    <Mail className="mr-2 w-4 h-4" /> ./contact
-                </Button>
+                    className="rounded-none px-8 border-yellow-500/40 text-yellow-500 hover:text-yellow-300 hover:border-yellow-400 hover:bg-yellow-500/10 font-mono w-full bg-transparent transition-colors"
+                    >
+                    ./view-cv <Download className="ml-2 w-4 h-4" />
+                    </Button>
                 </a>
-            </div>
+                <a
+                    href="mailto:arieljulytraje@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Ariel%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A"
+                >
+                    <Button
+                    variant="outline"
+                    className="rounded-none px-8 border-yellow-500/30 text-yellow-500 hover:text-yellow-300 hover:border-yellow-400 hover:bg-yellow-500/10 font-mono bg-transparent transition-colors"
+                    >
+                    <Mail className="mr-2 w-4 h-4" /> ./contact
+                    </Button>
+                </a>
+                </div>
           </motion.div>
         </div>
       </div>
