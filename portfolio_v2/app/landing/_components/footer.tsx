@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Terminal, ArrowUp} from "lucide-react";
+import { Terminal, ArrowUp } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const quickLinks = [
