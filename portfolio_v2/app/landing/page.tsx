@@ -6,6 +6,7 @@ import Certificates from "./_components/certificates";
 import AboutMe from "./_components/about-me";
 import ContactSection from "./_components/contact-section";
 import Footer from "./_components/footer";
+import Experience from "./_components/experience";
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <Hero />
       <FeaturedProjects />
       <TechSkills />
+      <Experience />
       <Certificates />
       <AboutMe />
       <ContactSection />
